@@ -18,8 +18,6 @@ const Router = () => {
                 </Navigator>
             </NavigationContainer>
         </View>
-
-
     );
 };
 
