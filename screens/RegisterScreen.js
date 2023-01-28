@@ -1,6 +1,6 @@
 import { Image, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
-import MyTabs from '../componenets/navBar'
+import MyTabs from '../componenets/navBar';
 import React from 'react';
 
 export default function SecondScreen({ navigation }) {
