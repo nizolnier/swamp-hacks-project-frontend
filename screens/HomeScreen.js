@@ -1,11 +1,21 @@
-import { Text, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import Router from './screens/Router';
 
-const HomeScreen = () => {
-    return (
-        <View>
-            <Text>Home Screen</Text>
-        </View>
-    );
+export default function HomeScreen() {
+  return (
+    <View style={styles.container}>
+        <Router />
+        <Title></Title>
+      <StatusBar style="auto" />
+    </View>
+  );
 }
 
-export default HomeScreen;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginRight: 'auto',
+    justifyContent: 'center',
+  },
+});
