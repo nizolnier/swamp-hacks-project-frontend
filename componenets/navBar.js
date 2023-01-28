@@ -14,7 +14,7 @@ const MyTabs = ({ navigation }) => {
         />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate("Register")}>
-        <Image source={require('../assets/profile-user.png')}
+        <Image source={require('../assets/add.png')}
       />
       </TouchableOpacity>
     </View>

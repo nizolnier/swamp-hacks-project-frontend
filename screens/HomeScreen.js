@@ -44,7 +44,20 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     color: 'lightgreen',
-    padding: 10
+  },
+  text3:{
+    fontSize: 20,
+    textAlign: 'center',
+    color: 'lightgreen',
+    paddingLeft: 120
+  },
+  ringCard: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 10,
+    paddingLeft: 20, 
   },
   video: {
     alignSelf: 'center',
@@ -55,10 +68,10 @@ const styles = StyleSheet.create({
 
 export default function HomeScreen({navigation}) {
   const [users, setUsers] = useState([
-    {name: 'William', key: '1'},
-    {name: 'Konstantine', key: '2'},
-    {name: 'Maria', key: '3'},
-    {name: 'Nicole', key: '4'},
+    {name: 'William', allow: true, key: '1'},
+    {name: 'Konstantine', allow: true, key: '2'},
+    {name: 'Maria', allow: true, key: '3'},
+    {name: 'Nicole', allow: true, key: '4'},
   ]);
 
   return (
@@ -75,14 +88,23 @@ export default function HomeScreen({navigation}) {
       </View>
       <View style = {styles.boxTwo} >
         <Text style= {styles.text1}> Recent Rings </Text>
+        {/* <View style ={styles.boxTwoTitle}>
+          <Text style= {styles.text1}> Recent Rings </Text>
+        </View> */}
         <ScrollView >
           {users.map(item => (
-            <View key={item.key}>
+            <View style={styles.ringCard} key={item.key}>
               <Text style= {styles.text2}>{item.name}</Text>
+              <Text style= {styles.text3}>{item.allow === true? "Allowed" : "Not Allowed"}</Text>
             </View>
           ))}
         </ScrollView>
       </View>
+        {/* <Button 
+          title = "Register authorized user"
+          onPress = {() =>navigation.navigate("Second") }
+        /> */}
+       
        <StatusBar style="auto" />
      </View>
   );
