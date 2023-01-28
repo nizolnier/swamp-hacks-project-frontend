@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Button, View } from 'react-native';
 import Flex from '../componenets/FlexBox';
+import MyTabs from '../componenets/navBar'
 
 export default function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
+      <MyTabs navigation={navigation} />
       <Button 
         title = "Navigate to second screen"
         onPress = {() =>navigation.navigate("Second") }

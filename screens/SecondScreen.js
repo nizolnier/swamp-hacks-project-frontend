@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
+import MyTabs from '../componenets/navBar'
 
 export default function SecondScreen() {
   return (
     <View style = {styles.container}>
+      <MyTabs navigation={navigation} />
       <Text> Open App.js to start working on your app! </Text>
       <StatusBar style="auto" />
     </View>
