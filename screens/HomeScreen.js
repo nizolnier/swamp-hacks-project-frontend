@@ -1,10 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Button, View } from 'react-native';
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
-      <Text> Hello this is the first thing printed to the project</Text>
+      <Button 
+        title = "Navigate to second screen"
+        onPress = {() =>navigation.navigate("Second") }
+      />
+      <Button 
+        title = "Navigate to home screen"
+        onPress = {() =>navigation.navigate("Second") }
+      />
       <StatusBar style="auto" />
     </View>
   );
@@ -13,7 +20,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginRight: 'auto',
+    alignItems: 'center',
     justifyContent: 'center',
   },
 });
