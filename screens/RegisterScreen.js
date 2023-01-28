@@ -3,7 +3,7 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import MyTabs from '../componenets/navBar'
 import React from 'react';
 
-export default function RegisterScreen({navigation}) {
+export default function SecondScreen({ navigation }) {
   const [name, onChangeName] = React.useState('');
   const [last, onChangeLast] = React.useState('');
 
