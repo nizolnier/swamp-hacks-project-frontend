@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
+import React, {useState} from 'react';
 import { StyleSheet, Button, View, Text } from 'react-native';
 import Flex from '../componenets/FlexBox';
 import MyTabs from '../componenets/navBar';
@@ -24,6 +25,9 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     backgroundColor: 'grey',
     padding: 10,
+  },
+  text: {
+    color: 'white'
   }
 });
 
@@ -44,7 +48,7 @@ export default function HomeScreen({navigation}) {
 
       </View>
       <View style = {styles.boxTwo} >
-
+        <Text style = {styles.text}> Registered Users</Text>
       </View>
         <Button 
           title = "Register authorized user"
