@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, Button, View, Text } from 'react-native';
 import Flex from '../componenets/FlexBox';
+import { Video } from 'expo-av';
 import MyTabs from '../componenets/navBar';
 
 const styles = StyleSheet.create({
@@ -16,7 +17,6 @@ const styles = StyleSheet.create({
   }, 
   boxOne: {
     flex: 1,
-    backgroundColor: 'skyblue',
     textAlign: 'center',
     padding: 10,
   },
@@ -28,7 +28,12 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'white'
-  }
+  },
+  video: {
+    alignSelf: 'center',
+    width: '100%',
+    height: '100%'
+    }
 });
 
 const Row = ({ children }) => (
@@ -45,7 +50,13 @@ export default function HomeScreen({navigation}) {
      <View style={styles.container}>
       <MyTabs  navigation = {navigation} />
       <View style = {styles.boxOne} >
-
+      <Video
+        source={require('../assets/video.mp4')}
+        useNativeControls
+        resizeMode="cover"
+        isLooping
+        style={styles.video}
+      />
       </View>
       <View style = {styles.boxTwo} >
         <Text style = {styles.text}> Registered Users</Text>
