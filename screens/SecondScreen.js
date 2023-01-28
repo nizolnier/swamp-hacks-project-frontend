@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import MyTabs from '../componenets/navBar'
 
-export default function SecondScreen() {
+export default function SecondScreen({navigation}) {
   return (
     <View style = {styles.container}>
       <MyTabs navigation={navigation} />
@@ -19,5 +19,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'grey',
+    fontColor: 'white'
   },
 });

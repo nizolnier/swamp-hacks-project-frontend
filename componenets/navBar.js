@@ -15,8 +15,7 @@ const MyTabs = ({ navigation }) => {
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate("Second")}>
         <Image source={require('../assets/profile-user.png')}
-          
-        />
+      />
       </TouchableOpacity>
     </View>
   );
@@ -31,7 +30,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: '3%'
+    padding: '3%',
+    borderBottomColor: 'grey',
+    borderBottomWidth: 1,
   },
 });
 
