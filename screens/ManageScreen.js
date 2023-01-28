@@ -1,11 +1,21 @@
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import MyTabs from '../componenets/navBar';
 
-const ManageScreen = () => {
+export default function ManageScreen({navigation}) {
     return(
-        <View>
+        <View style={styles.container}>
+            <MyTabs navigation={navigation} />
             <Text>ManageScreen</Text>
         </View>
     )
 }
 
-export default ManageScreen;
+const styles = StyleSheet.create({
+    container: {
+      flex: 2,
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      backgroundColor: "#F3EFE0"
+    },
+
+})
