@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Button, View } from 'react-native';
+import Flex from '../componenets/FlexBox';
 
 export default function HomeScreen({navigation}) {
   return (
