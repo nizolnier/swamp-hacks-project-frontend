@@ -9,7 +9,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.screen 
+        <Stack.Screen 
           name = "Home"
           component = {HomeScreen}
           options = {{title: "Welcome"}}
