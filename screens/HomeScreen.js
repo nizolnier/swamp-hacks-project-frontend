@@ -7,20 +7,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 2,
     flexDirection: 'column',
-    //alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: "#F3EFE0"
   },
   row: {
-    flexDirection: "row"
+    flexDirection: "column"
   }, 
   boxOne: {
+    flex: 1,
     backgroundColor: 'skyblue',
     textAlign: 'center',
     padding: 10,
   },
   boxTwo: {
+    flex : 1,
     alignItems: 'flex-start',
+    backgroundColor: 'grey',
     padding: 10,
   }
 });
@@ -37,12 +39,17 @@ const Col = ({ numRows, children }) => {
 export default function HomeScreen({navigation}) {
   return (
      <View style={styles.container}>
-      <MyTabs navigation = {navigation} /> 
-      <Text style= {styles.boxOne}> Welcome To 'Does it ring a bell'</Text>
-       <Button 
-         title = "Navigate to second screen"
-         onPress = {() =>navigation.navigate("Second") }
-       />
+      <MyTabs  navigation = {navigation} />
+      <View style = {styles.boxOne} >
+
+      </View>
+      <View style = {styles.boxTwo} >
+
+      </View>
+        <Button 
+          title = "Register authorized user"
+          onPress = {() =>navigation.navigate("Second") }
+        />
        {/* <Button 
          title = "Navigate to home screen"
          onPress = {() =>navigation.navigate("Second") }

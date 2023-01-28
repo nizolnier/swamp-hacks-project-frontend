@@ -7,20 +7,20 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <SandBox />
+    //<SandBox />
 
-        // <NavigationContainer>
-        //   <Stack.Navigator>
-        //     <Stack.Screen 
-        //        name = "Home"
-        //        component = {HomeScreen}
-        //       />
-        //     <Stack.Screen
-        //       name = "Second" 
-        //      component = {SecondScreen}
-        //     />
-        //   </Stack.Navigator>
-        // </NavigationContainer>
+         <NavigationContainer>
+           <Stack.Navigator>
+             <Stack.Screen 
+                name = "Home"
+                component = {HomeScreen}
+               />
+             <Stack.Screen
+               name = "Second" 
+              component = {SecondScreen}
+             />
+           </Stack.Navigator>
+         </NavigationContainer>
   );
 }
 
