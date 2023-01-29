@@ -2,29 +2,43 @@ import { Image, Pressable, StyleSheet, Text, TextInput, View } from 'react-nativ
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import MyTabs from '../componenets/navBar';
 import React from 'react';
+import UploadImage from '../componenets/UploadImage';
 
 export default function SecondScreen({ navigation }) {
-  const [name, onChangeName] = React.useState('');
-  const [last, onChangeLast] = React.useState('');
+  const [name, setName] = React.useState('');
+  const [last, setLast] = React.useState('');
+  const [image, setImage] = React.useState(null);
+
+  const submitForm = (e) => {
+    e.preventDefault();
+
+    const body = {
+      name: name,
+      last: last,
+      image: image,
+    }
+
+    console.log(body)
+  }
 
   return (
     <View style={styles.container}>
       <MyTabs navigation={navigation} />
       <View style={styles.textImage}>
         <Text style={styles.title}>Register User</Text>
-        <Image style={styles.image} source={require('../assets/img.png')} />
+        <UploadImage image={image} setImage={setImage} />
         <View style={styles.form}> 
           <TextInput style={styles.input}
-            onChangeText={onChangeName}
+            onChangeText={e=> setName(e)}
             value={name}
             placeholder="Name"
           />
           <TextInput style={styles.input}
-            onChangeText={onChangeLast}
+            onChangeText={e => setLast(e)}
             value={last}
             placeholder="Last Name"
           />
-          <Pressable style={styles.button}><Text>Send</Text></Pressable>
+          <Pressable style={styles.button} onPress={submitForm}><Text>Send</Text></Pressable>
         </View>
       </View>
 
