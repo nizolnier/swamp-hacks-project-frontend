@@ -3,22 +3,41 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import MyTabs from '../componenets/navBar';
 import React from 'react';
 import UploadImage from '../componenets/UploadImage';
+import * as FileSystem from 'expo-file-system';
+import axios from 'axios';
+
 
 export default function SecondScreen({ navigation }) {
   const [name, setName] = React.useState('');
   const [last, setLast] = React.useState('');
-  const [image, setImage] = React.useState(null);
+  const [image, setImage] = React.useState({});
 
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
 
+
     const body = {
-      name: name,
-      last: last,
-      image: image,
+      firstname: name,
+      lastname: last,
+      picture: image.base64
     }
 
-    console.log(body)
+    const config = {
+      method: 'post',
+      url: '10.32.40.174:80/addImage',
+      headers: { 
+        'Content-Type': 'multipart/form-data'
+      },
+      body: body
+    };
+
+    axios(config).then(() => {
+      alert("New face added")
+    }).catch((err) => {
+      alert("Oh no, something went wrong!")
+      console.log(err)
+    })
+
   }
 
   return (
@@ -27,9 +46,9 @@ export default function SecondScreen({ navigation }) {
       <View style={styles.textImage}>
         <Text style={styles.title}>Register User</Text>
         <UploadImage image={image} setImage={setImage} />
-        <View style={styles.form}> 
+        <View style={styles.form}>
           <TextInput style={styles.input}
-            onChangeText={e=> setName(e)}
+            onChangeText={e => setName(e)}
             value={name}
             placeholder="Name"
           />
@@ -70,7 +89,7 @@ const styles = StyleSheet.create({
     height: 250
   },
   form: {
-    flex : 1,
+    flex: 1,
     alignItems: 'center',
     padding: 10,
   },

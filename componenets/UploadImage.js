@@ -11,10 +11,10 @@ export default function UploadImage({ image, setImage }) {
             allowsEditing: true,
             aspect: [4, 3],
             quality: 1,
+            base64: true
         });
-        console.log(JSON.stringify(_image));
         if (!_image.cancelled) {
-            setImage(_image.uri);
+            setImage({base64: _image.base64, uri: _image.uri});
         }
 
     };
@@ -31,11 +31,11 @@ export default function UploadImage({ image, setImage }) {
     useEffect(() => {
         checkForCameraRollPermission()
     }, []);
-    
+
     return (
         <View style={imageUploaderStyles.container}>
             {
-                image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />
+                image && <Image source={{ uri: image.uri }} style={{ width: 200, height: 200 }} />
             }
             <View style={imageUploaderStyles.uploadBtnContainer}>
                 <TouchableOpacity onPress={addImage} style={imageUploaderStyles.uploadBtn} >
