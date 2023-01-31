@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, Button, View, Text, ScrollView } from 'react-native';
-import Flex from '../componenets/FlexBox';
 import { Video } from 'expo-av';
 import MyTabs from '../componenets/navBar';
 
@@ -88,9 +87,6 @@ export default function HomeScreen({navigation}) {
       </View>
       <View style = {styles.boxTwo} >
         <Text style= {styles.text1}> Recent Rings </Text>
-        {/* <View style ={styles.boxTwoTitle}>
-          <Text style= {styles.text1}> Recent Rings </Text>
-        </View> */}
         <ScrollView >
           {users.map(item => (
             <View style={styles.ringCard} key={item.key}>
@@ -100,14 +96,10 @@ export default function HomeScreen({navigation}) {
           ))}
         </ScrollView>
       </View>
-        {/* <Button 
-          title = "Register authorized user"
-          onPress = {() =>navigation.navigate("Second") }
-        /> */}
-       
        <StatusBar style="auto" />
      </View>
   );
 }
+
 
 
