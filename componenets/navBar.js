@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button, Image, TouchableOpacity } from "react-n
 const MyTabs = ({ navigation }) => {
   return (
     <View style={styles.container}>
-    <TouchableOpacity onPress={() => navigation.navigate("Second")}>
+    <TouchableOpacity onPress={() => navigation.navigate("Manage")}>
         <Image source={require('../assets/menu.png')}
           
         />
@@ -13,10 +13,9 @@ const MyTabs = ({ navigation }) => {
           
         />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate("Second")}>
-        <Image source={require('../assets/profile-user.png')}
-          
-        />
+      <TouchableOpacity onPress={() => navigation.navigate("Register")}>
+        <Image source={require('../assets/add.png')}
+      />
       </TouchableOpacity>
     </View>
   );
@@ -31,7 +30,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: '3%'
+    padding: '3%',
+    borderBottomColor: 'grey',
+    borderBottomWidth: 1,
   },
 });
 
