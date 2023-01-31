@@ -1,11 +1,28 @@
-import { Text, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Button, View } from 'react-native';
+import MyTabs from '../componenets/navBar'
 
-const HomeScreen = () => {
-    return (
-        <View>
-            <Text>HomeAAAAA</Text>
-        </View>
-    );
+export default function HomeScreen({navigation}) {
+  return (
+    <View style={styles.container}>
+      <MyTabs navigation={navigation} />
+      <Button 
+        title = "Navigate to second screen"
+        onPress = {() =>navigation.navigate("Second") }
+      />
+      <Button 
+        title = "Navigate to home screen"
+        onPress = {() =>navigation.navigate("Second") }
+      />
+      <StatusBar style="auto" />
+    </View>
+  );
 }
 
-export default HomeScreen;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
